@@ -1,3 +1,3 @@
-# Practicing Competitive Programming
+# Competitive Programming Practice
 Source code archive
 
