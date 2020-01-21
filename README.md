@@ -1,3 +1,3 @@
-# ps-algorithm-solutions
+# Practicing Competitive Programming
+Source code archive
 
-##Problem solving algorithm source codes
