@@ -14,6 +14,7 @@ Source code archive
 * [I Work All Day: 15035](https://www.acmicpc.net/problem/15035)
 ### From Google Code Jam  
 #### Round 1A 2019
-* [Pylons](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
+* [Pylons](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635/0000000000104e03)
     * The solution is uploaded as a folder with two scripts. One tests the solution for every possible input.  
     Another is the actual submission that was judged as correct.
+* [Golf Gophers](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635/0000000000104f1a)
