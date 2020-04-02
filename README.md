@@ -19,4 +19,4 @@ Source code archive
     Another is the actual submission that was judged as correct.
 * [Golf Gophers](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
 * [Alien Rhyme](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
-    * The solution was written after seeing the analysis of the problem and thus was mostly a practice of implementation.
+    * The solution was written after reading the analysis of the problem and thus was mostly a practice of implementation.
