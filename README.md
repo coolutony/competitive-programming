@@ -6,6 +6,7 @@ Source code archive
 #### NWERC 2016
 * [Careful Ascent: 13930](https://www.acmicpc.net/problem/13930)
 * [Exam Redistribution: 13932](https://www.acmicpc.net/problem/13932)
+* [Hamiltonian Hypercube: 13935](https://www.acmicpc.net/problem/13935)
 #### UKIEPC 2017
 * [Alien Sunset: 15027](https://www.acmicpc.net/problem/15027)
 * [Cued In: 15029](https://www.acmicpc.net/problem/15029)
