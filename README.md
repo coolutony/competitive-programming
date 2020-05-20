@@ -36,4 +36,4 @@ Source code archive
 #### Round 1C 2020 (Codes written during the actual competition)
 * [Overexcited Fan](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
 * [Overrandomized](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
-    * Passed only test set 1 and 2.
+    * Passed only test sets 1 and 2.
