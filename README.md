@@ -37,4 +37,3 @@ Source code archive
 * [Overexcited Fan](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
 * [Overrandomized](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
     * Passed only test set 1 and 2.
-    * The solution was written after seeing the analysis of the problem and thus was mostly a practice of implementation.
