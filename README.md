@@ -26,14 +26,14 @@ Source code archive
 #### Round 1B 2019
 * [Manhatten Crepe Cart](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051706)
     * Solved the problem within an hour as if competing in the actual competition.
-### Qualification Round 2020
+#### Qualification Round 2020
 * [Vestigium](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27)  
 * [Nesting Depth](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27)
 * [Parenting Partnering Returns](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27)
-### Round 1A 2020
+#### Round 1A 2020
 * [Pattern Matching](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd74)
 * [Pascal Walk](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd74)
-### Round 1C 2020 (Codes written during the actual competition)
+#### Round 1C 2020 (Codes written during the actual competition)
 * [Overexcited Fan](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
 * [Overrandomized](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
     * Passed only test set 1 and 2.
