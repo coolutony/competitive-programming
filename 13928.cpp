@@ -15,7 +15,7 @@ void minimize(string & target, string const & cmpr, int count){
 	int i = 0;
 	while(cmpr[i] == '9' && i < m){
 		if(target[i] != '9'){
-			target[i] = 9;
+			target[i] = '9';
 			count --;
 			if (count < 0){
 				target = "-1";
@@ -64,7 +64,7 @@ void minimize(string & target, string const & cmpr, int count){
 				}
 				if(save == m) return;
 			}
-		}else if(cmpr[i] < target [i]){
+		}else if(cmpr[i] < target[i]){
 			if(target[save] != cmpr[save]){
 				target[save] = cmpr[save];
 				count --;
@@ -112,10 +112,64 @@ string order(int ind, int k){
 	return ret;
 }
 int main(void) {
-	scanf("%d%d", &n, &m);
 	n = 5;
+	m = 5;
+	int k = 5;
 	string s1 = "00000";
 	string s2 = "00000";
 	minimize(s2,s1, 2);
-	cout << s2;
+	cout << s2 << "\n";
+	s1 = "34000";
+	s2 = "12000";
+	minimize(s2,s1, 2);
+	cout << s2 << "\n";
+	m = 10;
+	s1 = "9812345067";
+	s2 = "1298765432";
+	k = 2;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 10;
+	s1 = "9812345067";
+	s2 = "1298765432";
+	k = 3;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 10;
+	s1 = "9812345067";
+	s2 = "1298765432";
+	k = 4;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 10;
+	s1 = "8999995067";
+	s2 = "9899995432";
+	k = 4;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 10;
+	s1 = "8877549870";
+	s2 = "7885549870";
+	k = 2;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 10;
+	s1 = "8877549870";
+	s2 = "7885549870";
+	k = 3;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 4;
+	s1 = "9989";
+	s2 = "9995";
+	k = 1;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
 }
