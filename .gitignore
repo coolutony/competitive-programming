@@ -2,4 +2,5 @@ goorm.manifest
 input.txt
 output.txt
 sample.cpp
+.vscode/
 make
