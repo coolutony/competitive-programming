@@ -4,3 +4,4 @@ output.txt
 sample.cpp
 .vscode/
 make
+*.old
