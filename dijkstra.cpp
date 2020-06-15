@@ -8,22 +8,21 @@
 #include "mheap.cpp"
 
 using namespace std;
-typedef pair<string, int> sipair;
-template<class Key>
-map<Key, int> shortest_distances(map<Key,vector<pair<Key, int>>> & adj_list, const Key & root, vector<Key> nodes){
-    map<Key, int> dist_to;
-    mheap<Key,int> dheap;
+//Shortest distances between nodes (0,1,2, ...)
+vector<int> shortest_distances(vector<vector<pair<int, int>>> & adj_list, const int & root, vector<int> nodes, int n){//n: number of nodes
+    vector<int> dist_to;
+    mheap<int,int> dheap;
     dheap.insert(root,0);
-    for (auto node: nodes){
+    for (int node = 0; node < n; node++ ){
         if (node != root){
             dheap.insert(node, INT32_MAX);
         }
     }
-    while(dist_to.size() != nodes.size()){
-        Key chosen = dheap.pop();
+    while(dist_to.size() != n){
+        int chosen = dheap.pop();
         dist_to[chosen] = dheap.keyval[chosen];
         for(auto neighbor : adj_list[chosen]){
-            Key neigh_node = neighbor.first;
+            int neigh_node = neighbor.first;
             int neigh_dist = neighbor.second;
             int new_dist = neigh_dist + dist_to[chosen];
             if(new_dist < dheap.keyval[neigh_node]){
