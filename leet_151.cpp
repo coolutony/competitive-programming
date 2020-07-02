@@ -35,6 +35,9 @@ string reversewords(string s){
 		ans.push_back(st.top());
 		st.pop();
 	}
+	while(ans[ans.size()-1] = ' '){
+		ans.pop_back();
+	}
 	return ans;
 }
 int main(void) {
