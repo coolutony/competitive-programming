@@ -9,15 +9,6 @@ using namespace std;
 
 const int N=100001;
 
-struct Tree {
-	bool hasApple;
-	int ind;
-	vector<Tree *> children;
-	Tree(bool b, int i){
-		hasApple = b;
-		ind = i;
-	}
-};
 vector<vector<int>> make_adj_list(int n, vector<vector<int>>& edges, vector <bool>& hasApple){
 	vector<vector<int>> adj_list (n);
 	for(auto & pair : edges){
