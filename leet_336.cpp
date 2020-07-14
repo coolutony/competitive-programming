@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <unordered_map>
 #define MIN(X,Y) ((X) < (Y) ? : (X) : (Y))
 #define MAX(X,Y) ((X) > (Y) ? : (X) : (Y))
 using namespace std;
@@ -10,31 +11,72 @@ using namespace std;
 const int N=100001;
 
 int n,m;
-bool checkPalindrome(string a, string b){
-	int i = 0;
-	int j = a.size() + b.size() -1;
-	while (i<j){
-		char c_i = ' ';
-		char c_j = ' ';
-		if (i<a.size()) {c_i = a[i];}
-		else {c_i = b[i-a.size()];}
-		if (j<a.size()) {c_j = a[j];}
-		else {c_j = b[j-a.size()];}
-		if(c_i != c_j) return false;
-		i ++;
-		j --;
+void get_left_candidates(string & s, unordered_map<string, int> & dict, vector<vector<int>> & ans){
+	for(int i = 0; i < s.size(); i++){
+		int start = 0;
+		int end = i;
+		bool break_flag = false;
+		while(start <= end){
+			if(s[start] != s[end]){
+				break_flag = true;
+				break;
+			}
+			start ++;
+			end --;
+		}
+		if(break_flag) continue;
+		string cand = s.substr(i+1);
+		reverse(cand.begin(), cand.end());
+		if(dict.count(cand) > 0){
+			vector<int> to_add;
+			to_add.push_back(dict[cand]);
+			to_add.push_back(dict[s]);
+			ans.push_back(to_add);
+		}
 	}
-
-	return true;
+}
+void get_right_candidates(string & s, unordered_map<string, int> & dict, vector<vector<int>> & ans){
+	for(int i = 0; i < s.size(); i++){
+		int start = s.size()-1;
+		int end = start - i;
+		bool break_flag = false;
+		while(start >= end){
+			if(s[start] != s[end]){
+				break_flag = true;
+				break;
+			}
+			start --;
+			end ++;
+		}
+		if(break_flag) continue;
+		string cand = s.substr(0,s.size() - i -1);
+		reverse(cand.begin(), cand.end());
+		if(dict.count(cand) > 0){
+			vector<int> to_add;
+			to_add.push_back(dict[s]);
+			to_add.push_back(dict[cand]);
+			ans.push_back(to_add);
+		}
+	}
 }
 vector<vector<int>> palindromePairs(vector<string> words){
 	vector<vector<int>> ans;
+	unordered_map<string, int> dict;
 	for(int i = 0; i < words.size(); i++){
-		for (int j = 0; j< words.size(); j++){
-			if (i==j) continue;
-			if (checkPalindrome(words[i],words[j])){
-				ans.push_back(vector<int>({i,j}));
-			}
+		dict[words[i]] = i;
+	}
+	for (string & s : words){
+		if(s.size() == 0) continue;
+		get_left_candidates(s, dict, ans);
+		get_right_candidates(s, dict, ans);
+		string rev_s= s;
+		reverse(rev_s.begin(), rev_s.end());
+		if(dict.count(rev_s) > 0){
+			if(dict[s] == dict[rev_s]) continue;
+			vector<int> to_add;
+			to_add.push_back(dict[s]);
+			to_add.push_back(dict[rev_s]);
+			ans.push_back(to_add);
 		}
 	}
 	return ans;
