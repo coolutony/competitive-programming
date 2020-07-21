@@ -2,8 +2,16 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 #include <map>
+#define MIN(X,Y) ((X) < (Y) ? : (X) : (Y))
+#define MAX(X,Y) ((X) > (Y) ? : (X) : (Y))
 using namespace std;
+
+const int N=100001;
+
+int n,m;
+using pi = pair<int,int>;
 template <class Key, class Val>
 struct mheap{
     //heap with element of smallest value at the top
@@ -13,8 +21,8 @@ struct mheap{
     map<Key, int> position;
     Key pop(){
         Key popped = container[0]; // Here an error would occur if user tries to pop an empty heap
-        //cout << "\nPop:" << popped << "\n"; //DEBUG
-		position[contanier[0]] = -1;
+        //cout << '\nPop:' << popped << '\n'; //DEBUG
+		position[container[0]] = -1;
         container[0] = container[size-1];
         size--;
         heapify_down(0);
@@ -69,16 +77,45 @@ struct mheap{
         }
     }
 };
-/*
-int main (void){
-    //example input
-    int adj_mat[5][5] = {{0, 1, -1, 3, -1},
-                        {1, 0, 3, 4, 7},
-                        {-1, 3, 0, 4, 1},
-                        {3, 4, 4, 0 ,2},
-                        {-1, 7, 1, 2, 0}};
-    //acutal implementation
-    int final_dist[5] = {0, -1, -1 ,-1 ,-1};
-    int current_dist[5] = {0, -1, -1, -1, -1};                     
+void create_data(vector<vector<char>> & seats, vector<vector<vector<pi>>> & adj_list, mheap<pi,int> & edge_count, int & seat_count){
+	vector<int> mod_x = {-1,-1,0,0,1,1};
+	vector<int> mod_y = {-1,1,-1,1,-1,1};
+	for(int i = 0; i < seats.size(); i++){
+		for(int j = 0; j < seats[0].size(); j++){
+			if (seats[i][j] == '#') continue;
+			seat_count ++;
+			int count = 0;
+			for(int k =0; k < 6; k++){
+				int x = i + mod_x[k];
+				int y = j + mod_y[k];
+				if(x < 0 || y < 0 || x >= seats.size() || y >= seats[0].size()) continue;
+				if (seats[x][y] == '.'){
+					adj_list[i][j].push_back(make_pair(x,y));
+					count ++;
+				}
+			}
+			if (count > 0) edge_count.insert(make_pair(i,j),count);
+		}
+	}
 }
-*/
+int maxStudents(vector<vector<char>>& seats) {
+	vector<vector<vector<pi>>> adj_list(seats.size(),vector<vector<pi>>(seats[0].size(), vector<pi>())); //adj_list[i][j] has its neighbors
+	mheap<pi,int> edge_count;
+	int seat_count = 0;
+	create_data(seats,adj_list,edge_count,seat_count); //TODO
+	while(edge_count.size > 0){
+		pi to_del = edge_count.pop();
+		if(edge_count.keyval[to_del] == 0) break;
+		seat_count --;
+		for (pi & neigh : adj_list[to_del.first][to_del.second]){
+			edge_count.update_key(neigh,edge_count.keyval[neigh]-1);
+		}
+	}
+
+}
+int main(void) {
+	vector<vector<char>> seats {{'#','.','#','#','.','#'},
+                {'.','#','#','#','#','.'},
+                {'#','.','#','#','.','#'}};
+	cout << maxStudents(seats);
+}
