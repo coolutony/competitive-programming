@@ -94,7 +94,7 @@ void create_data(vector<vector<char>> & seats, vector<vector<vector<pi>>> & adj_
 					count ++;
 				}
 			}
-			if (count > 0) edge_count.insert(make_pair(i,j),count);
+			if (count > 0) edge_count.insert(make_pair(i,j),-count);
 		}
 	}
 }
@@ -105,17 +105,18 @@ int maxStudents(vector<vector<char>>& seats) {
 	create_data(seats,adj_list,edge_count,seat_count); //TODO
 	while(edge_count.size > 0){
 		pi to_del = edge_count.pop();
+        cout << "to_del: " << to_del.first << ", " << to_del.second << "\n"; //DEBUG
+        cout << "to_del's count: " << edge_count.keyval[to_del] << "\n"; //DEBUG
 		if(edge_count.keyval[to_del] == 0) break;
 		seat_count --;
 		for (pi & neigh : adj_list[to_del.first][to_del.second]){
-			edge_count.update_key(neigh,edge_count.keyval[neigh]-1);
+			edge_count.update_key(neigh,edge_count.keyval[neigh]+1);
 		}
 	}
+    return seat_count;
 
 }
 int main(void) {
-	vector<vector<char>> seats {{'#','.','#','#','.','#'},
-                {'.','#','#','#','#','.'},
-                {'#','.','#','#','.','#'}};
+	vector<vector<char>> seats {{'.','.','#','.','.'},{'.','.','.','.','#'},{'.','#','#','#','.'},{'.','#','#','#','.'}};
 	cout << maxStudents(seats);
 }
