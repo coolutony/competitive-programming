@@ -24,17 +24,23 @@ int rec(int end1, int end2, vector<int>& nums1, vector<int>& nums2, vector<vecto
 		dp[end1][end2] = ans;
 		return ans;
 	}
-	int ans = nums1[end1] * nums2[0];
-	for (int i=0; i<=end2; i++){
-		ans = MAX(ans, MAX(0,rec(end1-1,i-1, nums1, nums2, dp)) + nums1[end1] * nums2[i]);
-	}
-	ans = MAX(ans,rec(end1-1,end2,nums1,nums2,dp));
+	int ans = rec(end1-1, end2, nums1, nums2, dp);
+	ans = MAX(ans,rec(end1,end2-1,nums1,nums2,dp));
+	if (nums1[end1]*nums2[end2]>0) ans = MAX(ans, nums1[end1]*nums2[end2] + MAX(0,rec(end1-1,end2-1,nums1,nums2,dp)));
 	dp[end1][end2] = ans;
 	return ans;
 }
 
+
 int maxDotProduct(vector<int>& nums1, vector<int>& nums2) {
 	vector<vector<int>> dp(nums1.size(), vector<int> (nums2.size(), INT32_MIN));
+	dp[0][0] = nums1[0]*nums2[0];
+	for (int j = 1; j < nums2.size(); j++){
+		dp[0][j] = MAX(nums1[0]*nums2[j],dp[0][j-1]);
+	}
+	for (int i = 1; i < nums1.size(); i++){
+		dp[i][0] = MAX(nums1[i]*nums2[0],dp[i-1][0]);
+	}
 	// dp[nums1_final index][num2 final index] = value
 	int ans = rec(nums1.size()-1, nums2.size()-1, nums1, nums2, dp);
 	return ans;
