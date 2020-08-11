@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "cstdio": "cpp",
+        "unordered_map": "cpp"
+    }
+}
