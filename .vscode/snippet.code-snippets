@@ -17,7 +17,7 @@
 	// }
 	"Debug": {
 		"prefix": ["dbg"],
-		"body": ["cout << ${1}: << ${2}; //DEBUG"],
+		"body": ["cout << \"${1}:\" << ${2} << \"\\n\"; //DEBUG"],
 		"description": "For Debug"
 	}
 }
