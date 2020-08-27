@@ -1,6 +1,5 @@
 # Competitive Programming Practice
-Source code archive
-
+Source code archive.  
 ## Solved Problems
 ### From Baekjoon Online Judge (https://www.acmicpc.net/)
 #### NWERC 2016
@@ -13,6 +12,9 @@ Source code archive
 * [Deranging Hat: 15030](https://www.acmicpc.net/problem/15030)
 * [Education: 15031](https://www.acmicpc.net/problem/15031)
 * [I Work All Day: 15035](https://www.acmicpc.net/problem/15035)
+#### UCPC 2020 (Competition and Problems in Korean)
+* [길이 문자열: 19533](https://www.acmicpc.net/problem/19533)
+* [사과나무: 19539](https://www.acmicpc.net/problem/19539)
 ### From Google Code Jam  
 #### Round 1A 2019
 * [Pylons](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
@@ -37,3 +39,9 @@ Source code archive
 * [Overexcited Fan](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
 * [Overrandomized](https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef4)
     * Passed only test sets 1 and 2.
+### LeetCode Problems
+* Mostly for light coding practices, so only the number of the questions are listed.
+* 29, 131, 132, 151, 162, 166, 174, 186, 210, 212, 235, 328 ,336, 403, 552, 599, 669, 743, 752, 780, 1007, 1177, 1267, 1278, 1349, 1363, 1443, 1463, 1488, 1518, 1519
+## MISC
+* .vscode folder contains the personal configurations used on Visual Studio Code
+* There is an 13928_incomplete.cpp... which I failed to solve. 
