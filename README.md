@@ -41,7 +41,7 @@ Source code archive.
     * Passed only test sets 1 and 2.
 ### LeetCode Problems
 * Mostly for light coding practices, so only the number of the questions are listed.
-* 29, 131, 132, 151, 162, 166, 174, 186, 210, 212, 235, 328 ,336, 403, 552, 599, 669, 743, 752, 780, 1007, 1177, 1267, 1278, 1349, 1363, 1443, 1463, 1488, 1518, 1519
+* 29, 131, 132, 151, 162, 166, 174, 186, 210, 212, 235, 328 ,336, 403, 552, 599, 669, 743, 752, 787, 780, 1007, 1177, 1267, 1278, 1349, 1363, 1443, 1463, 1488, 1518, 1519
 ## MISC
 * .vscode folder contains the personal configurations used on Visual Studio Code
 * There is an 13928_incomplete.cpp... which I failed to solve. 
