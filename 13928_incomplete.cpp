@@ -67,8 +67,13 @@ void minimize(string & target, string const & cmpr, int count){
 	target = new_target;
 	return;
 }
-string minimum(string a, string b){
+string minimum(string & a, string & b){
 	//TODO: return smaller string
+	for (int i=0; i<m;i++){
+		if(a[i]>b[i]) return b;
+		if(a[i]<b[i]) return a;
+	}
+	return a;
 }
 string order(int ind, int k){
 	string ret = num[ind];
