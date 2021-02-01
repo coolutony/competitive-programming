@@ -15,15 +15,6 @@
                 "g++ -O2 -std=c++14 ${file} -o make && ./make < ${fileDirname}/input.txt > ${fileDirname}/output.txt"
             ],
             "problemMatcher": []
-        },
-        {
-            "type": "npm",
-            "script": "build",
-            "path": ".vscode-server/bin/5763d909d5f12fe19f215cbfdd29a91c0fa9208a/extensions/ms-vscode.node-debug/",
-            "group": "build",
-            "problemMatcher": [],
-            "label": "npm: build - .vscode-server/bin/5763d909d5f12fe19f215cbfdd29a91c0fa9208a/extensions/ms-vscode.node-debug",
-            "detail": "gulp build"
         }
     ]
 }
