@@ -12,68 +12,60 @@ vector<vector<string>> order_c;
 // "-1" impossible
 vector<string> num;
 void minimize(string & target, string const & cmpr, int count){
+	string new_target = target;
 	int i = 0;
-	while(cmpr[i] == '9' && i < m){
+	while (count > 0 && i < m){
+		if (target[i] != cmpr[i]){
+			new_target[i] = cmpr[i];
+			count--;
+		}
+		i ++;
+	}
+	if (i==m){
+		target = new_target;
+		return;
+	}
+	while(target[i] == cmpr[i] && i < m){
+		i ++;
+	}
+	if (i==m){
+		target = new_target;
+		return;
+	}
+	if (target[i] > cmpr[i]){
+		target = new_target;
+		return;
+	}
+	i--;
+	while(target[i] == cmpr[i] && i >= 0) i--;
+	if (i < 0){
+		target = "-1";
+		return;
+	}
+	while(cmpr[i] == '9' && i >= 0){
 		if(target[i] != '9'){
-			target[i] = '9';
-			count --;
-			if (count < 0){
-				target = "-1";
-				return;
-			}
+			count++;
+			new_target[i] = target[i]; //revert
 		}
-		i++;
+		i--;
 	}
-	if (count == 0){
-		if (cmpr[i] > target[i]){
-			target = "-1";
-			return;
-		}
+	if (i < 0){
+		target = "-1";
+		return;
 	}
-	while(count > 1 && i < m){
-		if (cmpr[i] != target[i]){
-			target[i] = cmpr[i];
+	if (target[i] != cmpr[i]) count ++;
+	new_target[i] = cmpr[i] + 1;
+	if (target[i] != cmpr[i] + 1) count --;
+	i++;
+	while(count > 0 && i < m){
+		if (target[i] != '0'){
+			new_target[i] = '0';
 			count --;
 		}
 		i++;
 	}
-	while(cmpr[i] == target[i] && i < m){
-		i++;
-	}
-	while(count > 0){
-		int save = i;
-		i++;
-		while(cmpr[i] == target[i] && i < m){
-			i++;
-		}
-		if(i==m){
-			target[save] = cmpr[save];
-			return;
-		}
-		if(cmpr[i] > target[i]){
-			if(target[save] != cmpr[save] +1){
-				target[save] = cmpr[save] + 1;
-				count --;
-				save ++;
-				while(count > 0 && save < m){
-					if(target[save] != 0){
-						target[save] ='0';
-						count --;
-					}
-					save++;
-				}
-				if(save == m) return;
-			}
-		}else if(cmpr[i] < target[i]){
-			if(target[save] != cmpr[save]){
-				target[save] = cmpr[save];
-				count --;
-			}
-		}else {
-			cout << "\n Something is wrong\n";
-		}
-	}
-	//TODO: how to minimize target (but still bigger than cmpr) with the left counts?
+	target = new_target;
+	return;
 }
 string minimum(string a, string b){
 	//TODO: return smaller string
@@ -169,6 +161,13 @@ int main(void) {
 	s1 = "9989";
 	s2 = "9995";
 	k = 1;
+	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
+	minimize(s2,s1, k);
+	cout << "output: " << s2 << "\n";
+	m = 4;
+	s1 = "1234";
+	s2 = "1111";
+	k = 0;
 	cout << "s1: " << s1 << " s2: " << s2 << " k: " << k << " ";
 	minimize(s2,s1, k);
 	cout << "output: " << s2 << "\n";
