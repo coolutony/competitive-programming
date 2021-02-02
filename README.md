@@ -3,6 +3,7 @@ Source code archive.
 ## Solved Problems
 ### From Baekjoon Online Judge (https://www.acmicpc.net/)
 #### NWERC 2016
+* [Arranging Hat: 13928](https://www.acmicpc.net/problem/13928)  
 * [Careful Ascent: 13930](https://www.acmicpc.net/problem/13930)
 * [Exam Redistribution: 13932](https://www.acmicpc.net/problem/13932)
 * [Hamiltonian Hypercube: 13935](https://www.acmicpc.net/problem/13935)
@@ -44,4 +45,3 @@ Source code archive.
 * 29, 131, 132, 151, 162, 166, 174, 186, 210, 212, 235, 328 ,336, 403, 552, 599, 669, 743, 752, 780, 1007, 1177, 1267, 1278, 1349, 1363, 1443, 1463, 1488, 1518, 1519
 ## MISC
 * .vscode folder contains the personal configurations used on Visual Studio Code
-* There is an 13928_incomplete.cpp... which I failed to solve. 
