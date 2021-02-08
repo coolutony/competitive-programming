@@ -16,6 +16,12 @@ Source code archive.
 #### UCPC 2020 (Competition and Problems in Korean)
 * [길이 문자열: 19533](https://www.acmicpc.net/problem/19533)
 * [사과나무: 19539](https://www.acmicpc.net/problem/19539)
+#### Not Classified Yet (Mostly selected by 'solve random')  
+* [Dice : 8323](https://www.acmicpc.net/problem/8323)
+### From Google Code Jam  
+#### Round 1A 2019
+* [Pylons](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
+    * Took enough time (>week) to solve the problem. ()
 ### From Google Code Jam  
 #### Round 1A 2019
 * [Pylons](https://codingcompetitions.withgoogle.com/codejam/round/0000000000051635)
